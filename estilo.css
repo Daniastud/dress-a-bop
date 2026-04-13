@@ -1,67 +1,82 @@
-@import url('https://fonts.googleapis.com/css2?family=Barriecito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
 
-
-html {
-  box-sizing: border-box;
-  height: 100%;
-}
-
-html,
-body {
+html, body {
   margin: 0;
   padding: 0;
-}
-
-::selection {
-  background-color: #30cac073;
-  color: #130808;
-}
-
-h2 {
-  font-size: 1.1em;
-  
-}
-
-a, a:active, a:visited, a:hover {
-  color: rgb(193, 120, 199);
-  cursor: pointer;
-  text-decoration: none;
+  height: 100%;
+  background-color: #f0f0f0; /* Fondo gris claro para que destaque */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #contenedorGeneral {
-  margin: auto 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #tituloPagina {
-  margin-top: 1em;
-  margin-bottom: 0;
-  margin-bottom: 0.5em;
-  font-family: "Barriecito", system-ui;
-  font-weight: 400;
-  font-style: normal;
-}
-
-#tituloPagina:hover {
-  color: pink;
-  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: 3em;
+  color: #ff00ff; /* Rosa fucsia potente */
+  text-transform: uppercase; /* Todo en mayúsculas */
+  letter-spacing: -2px; /* Letras más pegadas */
 }
 
 #contenedorPersonaje {
   display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* EL ARREGLO CLAVE: Este contenedor fuerza el alineamiento */
+#centradorDePartes {
+  display: flex;
   flex-direction: column;
-  align-items: space-around;
+  align-items: center;
+  position: relative;
+  width: 350px; /* Ancho fijo para el personaje */
 }
 
 .imagen {
-  height: 170px;
-  width: 150px;
-  margin: 0em auto;
+  display: block;
+  margin: 0;
+  padding: 0;
+  object-fit: contain;
+  width: 100%; /* La imagen ocupa todo el ancho de #centradorDePartes */
+  height: auto;
+}
+
+#superior {
+  z-index: 2; /* Zoey y su falda van PRIMERO (encima) */
+  position: relative;
+}
+
+#inferior {
+  z-index: 1; /* Las piernas van DEBAJO */
+  position: relative;
+  margin-top: -15px; /* Sube las piernas para unirlas. Ajusta si es necesario */
+  transform: scale(1.1); /* Mantengo el scale, pero ajustado */
+  transform-origin: top center;
 }
 
 #boton {
-  font-size: 0.9em;
-  background-color:  rgb(193, 120, 199);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 1.5em;
+  padding: 15px 30px;
+  background-color: #ff00ff; /* Rosa fucsia potente */
   color: white;
+  border: none;
+  border-radius: 10px;
   cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+}
+
+#boton:hover {
+  background-color: #cc00cc;
 }

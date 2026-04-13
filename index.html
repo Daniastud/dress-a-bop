@@ -3,46 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/sitio.webmanifest" />
-
-    <title>..:: Collage ::..</title>
-    <!-- <meta name="description" content="Descripción del sitio...." /> -->
-
-    <!-- OpenGraph -->
-    <meta property="og:locale" content="es_CO" />
-    <meta property="og:type" content="website" />
-    <!-- Esto importa la hoja de estilos de la página -->
-    <link rel="stylesheet" href="estilo.css" />​
-
-    <!-- Esto importa el archivo de JavaScript de la página -->
+    <title>Bestiario Fortnite</title>
+    <link rel="stylesheet" href="estilo.css" />
     <script src="script.js" defer></script>
   </head>
   <body>
+    <audio id="musicaLobby" loop>
+      <source src="assets/img/FortniteOGLobby.mp3" type="audio/mpeg">
+    </audio>
+
     <div id="contenedorGeneral">
-      <h1 id="tituloPagina">
-        <a href="https://en.wikipedia.org/wiki/Bestiario" target="_blank"
-          >Bestiario / Collage</a
-        >
-      </h1>
+      <h1 id="tituloPagina">Bestiario / Fortnite</h1>
+      
       <div id="contenedorPersonaje">
-        <img
-          class="imagen"
-          id="cabeza"
-          src=""
-        />
-        <img
-          class="imagen"
-          id="tronco"
-          src=""
-        />
-        <img
-          class="imagen"
-          id="patas"
-          src=""
-        />
+        <div id="centradorDePartes">
+          <img class="imagen" id="superior" src="" />
+          <img class="imagen" id="inferior" src="" />
+        </div>
       </div>
 
       <button id="boton">Mezclar</button>

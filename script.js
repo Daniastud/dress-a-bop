@@ -1,53 +1,37 @@
-// Listas de imágenes
-const listaCabezas = [
-  "../base-bestiario/assets/img/cabeza1.jpg",
-  "../base-bestiario/assets/img/cabeza2.jpg",
-  "../base-bestiario/assets/img/cabeza3.png",
-];
-const listaTroncos = [
- "../base-bestiario/assets/img/tronco1.jpg",
-  "../base-bestiario/assets/img/tronco2.jpg",
-  "../base-bestiario/assets/img/tronco3.jpg",
-];
-const listaPatas = [
-  "../base-bestiario/assets/img/patas1.jpg",
-  "../base-bestiario/assets/img/patas2.jpg",
-  "../base-bestiario/assets/img/patas3.png",
+const listaSuperior = [
+  "assets/img/Fishstick.png",
+  "assets/img/ikonik.png",
+  "assets/img/Peely (1).png",
+  "assets/img/Marshmello.png"
 ];
 
-// Obtenemos los contenedores de las imágenes del HTML usando los IDs
-const cabeza = document.getElementById("cabeza");
-const tronco = document.getElementById("tronco");
-const patas = document.getElementById("patas");
+const listaInferior = [
+  "assets/img/piernas carburo.png",
+  "assets/img/piernas galaxy.png",
+  "assets/img/piernas omega.png",
+  "assets/img/piernas teknique.png"
+];
+
+const superior = document.getElementById("superior");
+const inferior = document.getElementById("inferior");
 const boton = document.getElementById("boton");
+const musica = document.getElementById("musicaLobby");
 
-// Inicializamos las variables de los números aleatorios
-let cabezaAleatorio = 0;
-let troncoAleatorio = 0;
-let patasAleatorio = 0;
-
-// Función para generar un número aleatorio entre dos valores
-function numeroAleatorio(min, max) {
-  return Math.floor(Math.random() * (max - min) + min);
-}
-
-// Función para crear una nueva bestia con tres imágenes elegidas aleatoriamente
 function generarBestia() {
-  cabezaAleatorio = numeroAleatorio(0, listaCabezas.length);
-  troncoAleatorio = numeroAleatorio(0, listaTroncos.length);
-  patasAleatorio = numeroAleatorio(0, listaPatas.length);
+  const s = Math.floor(Math.random() * listaSuperior.length);
+  const i = Math.floor(Math.random() * listaInferior.length);
 
-  // Asignamos la nueva fuente (source) a cada imagen
-  cabeza.src = `${listaCabezas[cabezaAleatorio]}`; //ruta + listaCabezas[cabezaAleatorio];
-  tronco.src = `${listaTroncos[troncoAleatorio]}`;
-  patas.src = `${listaPatas[patasAleatorio]}`;
-
-  console.log(cabezaAleatorio, troncoAleatorio, patasAleatorio);
+  superior.src = listaSuperior[s];
+  inferior.src = listaInferior[i];
 }
 
-// Generamos un nuevo collage cada vez que hacemos click en el botón "mezclar"
-boton.addEventListener("click", function () {
+boton.addEventListener("click", function() {
   generarBestia();
+  
+  if (musica.paused) {
+    musica.volume = 0.6;
+    musica.play().catch(error => console.log("Esperando interacción..."));
+  }
 });
 
-generarBestia();
+window.onload = generarBestia;
