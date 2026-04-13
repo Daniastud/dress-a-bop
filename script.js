@@ -41,3 +41,10 @@ boton.addEventListener("click", () => {
 });
 
 window.onload = generarBestia;
+
+let nombre = prompt("¿Cómo tú te llamas? Yo no sé");
+//alert(`Hola, ${nombre}`);
+console.log(nombre);
+
+
+generarBestia();
